@@ -828,7 +828,7 @@ const id_card_number = localStorage.getItem("idCardNumber");
 if (!id_card_number) {
     alert("ไม่พบข้อมูลผู้ใช้งาน กรุณาเข้าสู่ระบบก่อน");
     shakeButton.disabled = true;
-    window.location.href = '../../../login/index.html';
+    window.location.href = '/index.html';
 }
 
 // โหลดเหรียญจาก API
@@ -849,7 +849,7 @@ async function fetchCoinsFromAPI() {
         alert(`ไม่สามารถโหลดเหรียญได้: ${error.message}`);
         if (error.message.includes('token failed') || error.message.includes('Not authorized')) {
             localStorage.clear();
-            window.location.href = '../../../login/index.html';
+            window.location.href = '/index.html';
         }
     }
 }

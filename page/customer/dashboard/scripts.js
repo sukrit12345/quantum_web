@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!userId || userRole !== 'customer') {
         alert('คุณไม่มีสิทธิ์เข้าถึงหน้านี้ หรือไม่ได้เข้าสู่ระบบ');
-        window.location.href = '/login.html';
+        window.location.href = '/index.html';
         return;
     }
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         alert(`ไม่สามารถดึงข้อมูลแดชบอร์ดได้: ${error.message}`);
         if (error.message.includes('token failed') || error.message.includes('Not authorized')) {
             localStorage.clear();
-            window.location.href = '/login.html';
+            window.location.href = '/index.html';
         }
     }
 });

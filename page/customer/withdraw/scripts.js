@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!userId || userRole !== 'customer') {
         alert('คุณไม่มีสิทธิ์เข้าถึงหน้านี้ หรือไม่ได้เข้าสู่ระบบ');
-        window.location.href = '../../../login/index.html';
+        window.location.href = '/index.html';
         return;
     }
 

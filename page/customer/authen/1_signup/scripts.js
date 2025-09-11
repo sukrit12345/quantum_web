@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     password
                 });
                 alert(response.message);
-                window.location.href = '/login.html'; // กลับไปหน้า Login
+                window.location.href = '/index.html'; // กลับไปหน้า Login
             } catch (error) {
                 alert(`สมัครสมาชิกไม่สำเร็จ: ${error.message}`);
             }

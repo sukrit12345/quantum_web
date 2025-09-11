@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const data = await makeAuthenticatedApiRequest('/auth/reset-password', 'POST', { resetToken, newPassword });
             displayMessage(data.message || 'รีเซ็ตรหัสผ่านสำเร็จแล้ว.', 'text-green-600', resetPasswordMessageDiv);
-            setTimeout(() => { window.location.href = '/login.html'; }, 3000);
+            setTimeout(() => { window.location.href = '/index.html'; }, 3000);
         } catch (error) {
             displayMessage(error.message, 'text-red-500', resetPasswordMessageDiv);
         } finally {

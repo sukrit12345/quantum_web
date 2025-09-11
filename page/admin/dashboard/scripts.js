@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!userId || userRole !== 'admin') {
         alert('คุณไม่มีสิทธิ์เข้าถึงหน้านี้ หรือไม่ได้เข้าสู่ระบบในฐานะแอดมิน');
-        window.location.href = '../../../login/index.html';
+        window.location.href = '/index.html';
         return;
     }
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // >>> ตรงนี้คือจุดที่จับ Error และแจ้งเตือน
         if (error.message.includes('token failed') || error.message.includes('Not authorized')) {
             localStorage.clear();
-            window.location.href = '../../../login/index.html';
+            window.location.href = '/index.html';
         }
     }
 });
