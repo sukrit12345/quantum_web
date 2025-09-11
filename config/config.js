@@ -1,5 +1,5 @@
 // mothergame/config/config.js
-const BASE_API_URL = 'quantumbackend-production.up.railway.app/api'; // ตรวจสอบให้แน่ใจว่าตรงกับ PORT ของ Backend ของคุณ
+const BASE_API_URL = 'https://quantumbackend-production.up.railway.app/api';// ตรวจสอบให้แน่ใจว่าตรงกับ PORT ของ Backend ของคุณ
 
 // ฟังก์ชันช่วยในการเรียก API พร้อมการยืนยันตัวตน
 async function makeAuthenticatedApiRequest(endpoint, method = 'GET', data = null) {
