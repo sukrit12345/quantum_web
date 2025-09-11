@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อนุมัติถอนเงิน - แอดมิน</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans text-gray-800">
+    <!-- Top Navbar for Desktop (Title + Logout) -->
+    <nav class="bg-gray-800 p-4 shadow-lg fixed top-0 left-0 right-0 z-10 w-full">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">
+                แอดมิน แผงควบคุม
+            </div>
+            <!-- Logout button for desktop -->
+            <div class="hidden md:block">
+                <a href="/login.html" class="text-white px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                    <i class="fas fa-sign-out-alt mr-2"></i> ออกจากระบบ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed Bottom Navbar for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-gray-800 shadow-xl z-20 md:hidden p-2 h-16">
+        <div class="flex justify-around items-center h-full">
+            <a href="../dashboard/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                <i class="fas fa-tachometer-alt text-2xl"></i>
+                <span class="text-xs">แดชบอร์ด</span>
+            </a>
+            <a href="index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                <i class="fas fa-clipboard-list text-2xl"></i>
+                <span class="text-xs">อนุมัติฝาก</span>
+            </a>
+            <a href="../withdraw_approval/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                <i class="fas fa-hand-holding-usd text-2xl"></i>
+                <span class="text-xs">อนุมัติถอน</span>
+            </a>
+            <a href="../add_coins/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                <i class="fas fa-gift text-2xl"></i>
+                <span class="text-xs">เติมคอย</span>
+            </a>
+            <a href="/login.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                <i class="fas fa-sign-out-alt text-2xl"></i>
+                <span class="text-xs">ออกระบบ</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content - Adjust padding for fixed navbars -->
+    <div class="container mx-auto p-4 flex-grow pt-20 pb-16 md:pt-20 md:pb-0">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200 my-4 md:my-8">
+            <h1 class="text-2xl md:text-3xl font-extrabold text-center mb-6 text-gray-800">อนุมัติรายการถอนเงิน</h1>
+            <p class="text-center text-gray-600 mb-6 md:mb-8 text-lg">ตรวจสอบและอนุมัติรายการถอนเงินของลูกค้า</p>
+
+            <div class="overflow-x-auto rounded-lg shadow-md">
+                <!-- ตรวจสอบตรงนี้: ต้องมี id="withdrawalsTable" และ tbody -->
+                <table id="withdrawalsTable" class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-200 text-left text-gray-700 uppercase text-sm leading-normal">
+                            <th class="py-3 px-4 text-left">ID</th>
+                            <th class="py-3 px-4 text-left">เลขบัตรประชาชน</th>
+                            <th class="py-3 px-4 text-left">คอยที่ถอน</th>
+                            <th class="py-3 px-4 text-left">ธนาคาร</th>
+                            <th class="py-3 px-4 text-left">เลขบัญชี</th>
+                            <th class="py-3 px-4 text-left">ชื่อบัญชี</th>
+                            <th class="py-3 px-4 text-left">สถานะ</th>
+                            <th class="py-3 px-4 text-left">วันที่</th>
+                            <th class="py-3 px-4 text-center">จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 text-sm font-light">
+                        <!-- Data will be loaded here by JavaScript -->
+                        <tr><td colspan="9" class="py-4 text-center text-gray-500">กำลังโหลดรายการถอนเงิน...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-6 md:mt-8 shadow-inner">
+        <p>&copy; 2025 เกมเสี่ยงเซียมซี. All rights reserved.</p>
+    </footer>
+
+    <script src="../../../../config/config.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมเสี่ยงเซียมซี</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans text-gray-800">
+
+    <!-- Top Navbar Desktop -->
+    <nav class="bg-indigo-700 p-4 shadow-lg fixed top-0 left-0 right-0 z-10 w-full">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">เกมเสี่ยงเซียมซี</div>
+            <div class="hidden md:block">
+                <a href="/login.html" class="text-white px-3 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                    <i class="fas fa-sign-out-alt mr-2"></i> ออกจากระบบ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed Bottom Navbar for Mobile (Icons + Labels) -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-indigo-700 shadow-xl z-20 md:hidden p-2 h-20">
+        <div class="flex justify-around items-center h-full">
+            <a href="index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                <i class="fas fa-home text-2xl"></i>
+                <span class="text-xs mt-1">หน้าแรก</span>
+            </a>
+            <a href="../deposit/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                <i class="fas fa-wallet text-2xl"></i>
+                <span class="text-xs mt-1">ฝากเงิน</span>
+            </a>
+            <a href="../withdraw/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                <i class="fas fa-exchange-alt text-2xl"></i>
+                <span class="text-xs mt-1">ถอนเงิน</span>
+            </a>
+            <a href="../game/index.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                <i class="fas fa-dice text-2xl"></i>
+                <span class="text-xs mt-1">เกม</span>
+            </a>
+            <a href="/login.html" class="text-white flex flex-col items-center p-2 rounded-md hover:bg-indigo-600 transition-colors duration-200">
+                <i class="fas fa-sign-out-alt text-2xl"></i>
+                <span class="text-xs mt-1">ออกจากระบบ</span>
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container mx-auto flex-grow p-4 flex flex-col items-center pt-20 pb-16 md:pt-20 md:pb-0">
+        <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-gray-200 w-full max-w-2xl text-center">
+            
+            <!-- Coin Display -->
+            <div class="flex justify-between items-center mb-4">
+                <span id="coinDisplay" class="inline-flex items-center bg-yellow-100 text-yellow-800 font-bold px-4 py-2 rounded-full shadow">
+                    <span class="text-2xl">🪙</span>
+                    <span id="coinCount" class="ml-2">0</span> Coins
+                </span>
+                <button id="settingsButton" class="text-gray-600 hover:text-gray-900 text-3xl hidden">⚙️</button>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-extrabold text-red-700 mb-2">ทำนายโชคชะตา</h1>
+            <p class="text-gray-600 mb-6">ตั้งจิตอธิษฐาน</p>
+
+            <!-- Fortune Cylinder -->
+            <div class="mb-6 flex flex-col items-center">
+                <div id="fortuneCylinder" class="fortune-cylinder mb-4 relative group">
+                    <span class="relative z-10 text-white/70 text-sm group-hover:hidden">คลิกเพื่อเขย่า</span>
+                </div>
+                <button id="shakeButton" class="action-button py-3 px-8 rounded-lg text-xl font-semibold">
+                    เสี่ยงเซียมซี (10 Coin)
+                </button>
+                <p id="coinError" class="text-red-500 text-sm mt-2 hidden">Coin ไม่เพียงพอ!</p>
+            </div>
+
+            <!-- Result Area -->
+            <div id="resultArea" class="hidden mt-8">
+                <h2 class="text-2xl font-semibold text-red-600 mb-4">ผลการคำทำนายของคุณ:</h2>
+                <div class="flex flex-col items-center mb-6">
+                    <p class="text-gray-700 mb-2">คุณได้ไม้เซียมซีหมายเลข:</p>
+                    <div id="stickNumberDisplay" class="stick-number-display flex items-center justify-center font-bold">?</div>
+                </div>
+                <div id="fortunePaper" class="fortune-paper p-6 rounded-lg shadow-inner text-left text-gray-800">
+                    <p class="text-center italic">กำลังเปิดอ่านคำทำนาย...</p>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-dashed border-gray-400">
+                <p class="text-xs text-gray-500 mt-4">คำทำนายนี้เป็นเพียงแนวทางเท่านั้น</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../config/config.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

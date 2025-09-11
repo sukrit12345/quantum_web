@@ -1,0 +1,51 @@
+/* mothergame/page/admin/withdraw_approval/styles.css */
+
+/* Custom CSS for responsive table on small screens */
+@media screen and (max-width: 768px) {
+    table thead {
+        display: none; /* Hide table headers */
+    }
+
+    table, table tbody, table tr, table td {
+        display: block; /* Make table elements display as blocks */
+        width: 100%; /* Each row/cell takes full width */
+    }
+
+    table tr {
+        margin-bottom: 15px; /* Add space between rows */
+        border: 1px solid #e2e8f0; /* Light border */
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    table td {
+        text-align: right; /* Align cell content to the right */
+        padding-left: 50%; /* Make space on the left for the label */
+        position: relative;
+        border: none; /* Remove borders between cells in the same row */
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    table td::before {
+        content: attr(data-label); /* Use data-label as the heading */
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #4a5568; /* Darker gray for labels */
+    }
+
+    table td .btn { /* Adjust buttons within table cells */
+        width: auto;
+        display: inline-block;
+        margin: 4px;
+        padding: 6px 10px;
+        font-size: 0.75rem; /* text-xs */
+    }
+}

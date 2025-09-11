@@ -1,0 +1,109 @@
+/* mothergame/page/customer/game/styles.css */
+
+body {
+    font-family: "Sarabun", sans-serif; /* Thai font */
+    background-color: #f3eada; /* Creamy beige */
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); /* Subtle texture */
+}
+.temple-container {
+    background-color: #fff8e1; /* Light yellow, like temple walls */
+    border: 5px solid #d2b48c; /* Tan, like wood */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.fortune-cylinder {
+    width: 120px;
+    height: 200px;
+    background-color: #e6a45c; /* Orangey-brown for cylinder */
+    border: 3px solid #8b4513; /* SaddleBrown */
+    border-radius: 10px 10px 50px 50px / 10px 10px 30px 30px; /* Cylinder shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+.fortune-cylinder::before {
+    /* Sticks inside visual */
+    content: "";
+    position: absolute;
+    top: 5%;
+    width: 80%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        45deg,
+        #d2b48c,
+        #d2b48c 10px,
+        #c19a6b 10px,
+        #c19a6b 20px
+    );
+    border-radius: 5px;
+    opacity: 0.7;
+}
+.fortune-cylinder.shaking {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0) rotate(2deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-3px, 0, 0) rotate(-3deg);
+    }
+    40%,
+    60% {
+        transform: translate3d(3px, 0, 0) rotate(3deg);
+    }
+}
+.action-button {
+    background-color: #c0392b; /* Red like temple accents */
+    color: white;
+    border: 2px solid #7b241c;
+    box-shadow: 0 4px #7b241c;
+    transition: all 0.1s ease-in-out;
+}
+.action-button:hover:not(:disabled) {
+    background-color: #a93226;
+}
+.action-button:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 2px #7b241c;
+}
+.action-button:disabled {
+    background-color: #e74c3c; /* Lighter red for disabled */
+    color: #fccbc6; /* Lighter text for disabled */
+    box-shadow: 0 4px #b93427; /* Slightly different shadow */
+    cursor: not-allowed;
+}
+.fortune-paper {
+    background-color: #ffffe0; /* LightYellow for paper */
+    border: 2px solid #bdb76b; /* DarkKhaki */
+    min-height: 200px;
+    line-height: 1.8;
+    white-space: pre-wrap; /* Preserve line breaks from JS */
+}
+.stick-number-display {
+    background-color: #dc143c; /* Crimson */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+}
+.coin-display {
+    background-color: #f1c40f; /* Gold color */
+    color: #784d0b; /* Dark brown text */
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 2px solid #b8860b; /* DarkGoldenrod */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

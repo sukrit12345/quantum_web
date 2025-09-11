@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>เข้าสู่ระบบ - เกมเสี่ยงเซียมซี</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/login/styles.css" />
+  </head>
+  <body class="flex justify-center items-center min-h-screen p-4 md:p-0 font-sans text-gray-800">
+
+      <div class="w-full max-w-md bg-white p-6 md:p-8 rounded-2xl my-4 md:my-8 mx-auto transform hover:scale-102 transition-all duration-300 ease-in-out">
+
+        <div class="flex justify-center mb-6 md:mb-8">
+            <object type="image/svg+xml" data="../../assets/logo.svg" class="w-40 h-40 md:w-48 md:h-48 drop-shadow-md"></object>
+        </div>
+
+        <div class="role-switcher flex p-1 bg-gray-100 rounded-full mb-6 md:mb-8 shadow-inner">
+          <button
+            id="customerBtn"
+            class="role-btn flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+            data-role="customer"
+          >
+            ลูกค้า
+          </button>
+          <button
+            id="staffBtn"
+            class="role-btn flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
+            data-role="staff"
+          >
+            เจ้าหน้าที่
+          </button>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-6 md:mb-8 text-indigo-700">เข้าสู่ระบบ</h2>
+
+        <div class="relative mb-5">
+          <i
+            class="fas fa-id-card absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"
+          ></i>
+          <input
+            type="text"
+            id="id_card_number"
+            placeholder="เลขบัตรประชาชน"
+            required
+            class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500 transition-all duration-200 text-gray-700 placeholder-gray-400 shadow-sm"
+          />
+        </div>
+
+        <div class="relative mb-5">
+          <i
+            class="fas fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"
+          ></i>
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="รหัสผ่าน"
+            required
+            class="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500 transition-all duration-200 text-gray-700 placeholder-gray-400 shadow-sm"
+          />
+          <button
+            type="button"
+            id="togglePassword"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-indigo-600 transition-colors duration-200 p-1"
+          >
+            <i class="fas fa-eye" id="eyeIcon"></i>
+          </button>
+        </div>
+
+        <div
+          id="forgotPassword"
+          class="text-right text-sm text-indigo-600 hover:underline mb-6 md:mb-8 cursor-pointer font-medium"
+          onclick="window.location.href='/page/customer/authen/2_resetpassword/index.html'"
+        >
+          ลืมรหัสผ่าน?
+        </div>
+
+        <button
+          id="loginBtn"
+          type="submit"
+          class="w-full py-3 rounded-lg text-lg font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          เข้าสู่ระบบ
+        </button>
+
+        <div
+          id="registerSection"
+          class="text-center text-base mt-6 md:mt-8 text-gray-600"
+        >
+          หรือ
+          <p class="mt-2">
+            คุณยังไม่มีบัญชีใช่ไหม?
+            <span
+              class="text-indigo-600 cursor-pointer hover:underline font-bold"
+              onclick="window.location.href='/page/customer/authen/1_signup/index.html'"
+              >สมัครใช้งาน</span
+            >
+          </p>
+        </div>
+    </div>
+
+    <!-- Corrected: config.js loaded BEFORE scripts.js -->
+    <script src="/config/config.js"></script>
+    <script src="/login/scripts.js"></script>
+  </body>
+</html>
